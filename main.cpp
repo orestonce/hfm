@@ -1,11 +1,12 @@
 #include <fstream>
 #include <iostream>
-#include <haffuman.h>
+#include <stdio.h>
+#include "haffuman.h"
 
 //
-const char *inname= "d:/in.txt";
-const char *tmpname= "D:/tmp";
-const char *depressname = "d:/out.txt";
+const char *inname= "in.txt";
+const char *tmpname= "tmp";
+const char *depressname = "out.txt";
 
 int main(void) {
     std::ifstream infile (inname);
@@ -30,8 +31,8 @@ int main(void) {
     hfm.decoding(infile ,outfile);
     infile.close();
     outfile.close();
-
-    std::cout << 321.0/8 << std::endl;
+	
+	remove(tmpname);	
 
     return 0;
 }
