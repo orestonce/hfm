@@ -1,14 +1,20 @@
 #include <fstream>
 #include <iostream>
-#include <stdio.h>
+#include <cstdlib>
 #include "haffuman.h"
 
 //
-const char *inname= "in.txt";
-const char *tmpname= "tmp";
-const char *depressname = "out.txt";
 
-int main(void) {
+int main(int argc,char *argv[]) {
+	
+	if (argc != 4) {
+		std::cout << "Useage : " << argv[0] << " {input_file} {tmp_file} {output_file}" << std::endl;
+		return EXIT_FAILURE;
+	}
+	const char *inname	= argv[1];
+	const char *tmpname	= argv[2];
+	const char *depressname	= argv[3];
+
     std::ifstream infile (inname);
 
     if (!infile ) {
@@ -34,5 +40,5 @@ int main(void) {
 	
 	remove(tmpname);	
 
-    return 0;
+    return EXIT_SUCCESS;
 }
