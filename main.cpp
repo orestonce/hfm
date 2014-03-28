@@ -37,7 +37,7 @@ int main(int argc,char *argv[]) {
     hfm.decoding(infile ,outfile);
     infile.close();
     outfile.close();
-	
+	// remove temp files , end.	
 	remove(tmpname);	
 
     return EXIT_SUCCESS;
